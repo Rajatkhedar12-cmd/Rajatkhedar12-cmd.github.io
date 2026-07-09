@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajat Khedar | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .stat-card h3 {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card .tech-stack {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .project-card ul {
+            margin-left: 1.2rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        .project-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-links {
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent-color);
+            text-decoration: none;
+            border: 1px solid var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Rajat Khedar</h1>
+        <p class="tagline">AI/ML Engineer | Prompt Engineering | Data Science</p>
+        <div class="social-links">
+            <a href="https://github.com/Rajatkhedar12-cmd" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/rajat-khedar-522291302/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://leetcode.com/u/rajatkhedar123/" target="_blank" title="LeetCode"><i class="fas fa-code"></i></a>
+            <a href="https://share.streamlit.io/user/rajatkhedar12-cmd-2201" target="_blank" title="Streamlit Apps"><i class="fas fa-layer-group"></i></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Problem Solving Stats</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>LeetCode</h3>
+                <div class="number" id="leetcode-stats">Loading...</div>
+                <a href="https://leetcode.com/u/rajatkhedar123/" target="_blank" style="color:var(--text-secondary); text-decoration:none; font-size: 0.8rem;">View Profile</a>
+            </div>
+            <div class="stat-card">
+                <h3>Codeforces</h3>
+                <div class="number" id="codeforces-stats">Loading...</div>
+                <a href="https://codeforces.com/profile/rajatkhedar123" target="_blank" style="color:var(--text-secondary); text-decoration:none; font-size: 0.8rem;">View Profile</a>
+            </div>
+            <div class="stat-card">
+                <h3>GeeksforGeeks</h3>
+                <div class="number" id="gfg-stats">Loading...</div>
+                <a href="https://www.geeksforgeeks.org/profile/rajat54epe?tab=activity" target="_blank" style="color:var(--text-secondary); text-decoration:none; font-size: 0.8rem;">View Profile</a>
+            </div>
+            <div class="stat-card">
+                <h3>Naukri Code360</h3>
+                <div class="number">Active</div>
+                <a href="https://www.naukri.com/code360/profile/22f2aa1d-5ac3-43ce-b40c-4c3637ff4327" target="_blank" style="color:var(--text-secondary); text-decoration:none; font-size: 0.8rem;">View Profile</a>
+            </div>
+        </div>
+
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>JARVIS – Agentic AI Assistant</h3>
+                <div class="tech-stack">Python | Claude API | MCP | RAG | SQLite</div>
+                <ul>
+                    <li>Designed an MCP-style tool-calling layer letting the agent autonomously select and invoke tools from natural-language voice intent, orchestrated across a dual-model reasoning pipeline.</li>
+                    <li>Implemented a RAG-style long-term memory layer using SQLite FTS5 full-text retrieval for persistent, context-aware recall across sessions.</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/Rajatkhedar12-cmd/Jarvis" class="btn" target="_blank">View Code</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>StockZen – Market Forecasting</h3>
+                <div class="tech-stack">LightGBM | Optuna | Groq API (LLaMA3-8B) | ML</div>
+                <ul>
+                    <li>Built a machine learning forecasting pipeline using LightGBM gradient-boosted trees, hyperparameter-tuned via Optuna, on historical market data.</li>
+                    <li>Integrated Groq LLaMA3-8B for real-time sentiment analysis across 5000+ financial news headlines to enrich model features.</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/Rajatkhedar12-cmd/StockZen-stock_price_prediction" class="btn" target="_blank">View Code</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>SmartFill 2.0 – Autocompletion</h3>
+                <div class="tech-stack">Python | Groq API | LLaMA3 | LangChain | RAG</div>
+                <ul>
+                    <li>Developed an LLM-powered completion engine using LangChain-based prompt orchestration for context-aware text and code suggestions.</li>
+                    <li>Designed an adaptive prompting strategy that improved contextual completion accuracy by 30% over baseline model outputs.</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/Rajatkhedar12-cmd/SmartFill2.0-Code-and-text-Auto-Completion" class="btn" target="_blank">View Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadStats() {
+            try {
+                // Prevent aggressive browser caching so you always see fresh stats
+                const response = await fetch('./stats.json?t=' + new Date().getTime());
+                if (!response.ok) throw new Error('Data not available yet');
+                const data = await response.json();
+                
+                document.getElementById('leetcode-stats').innerText = data.leetcode || '350+';
+                document.getElementById('codeforces-stats').innerText = data.codeforces || 'Pupil';
+                document.getElementById('gfg-stats').innerText = data.gfg || '200+';
+            } catch (error) {
+                console.log('Using default fallback stats:', error);
+                // Fallbacks if stats.json hasn't generated yet
+                document.getElementById('leetcode-stats').innerText = '350+';
+                document.getElementById('codeforces-stats').innerText = 'Pupil';
+                document.getElementById('gfg-stats').innerText = '200+';
+            }
+        }
+        window.onload = loadStats;
+    </script>
+</body>
+</html>
