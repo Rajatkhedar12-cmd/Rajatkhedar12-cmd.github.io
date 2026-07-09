@@ -13,155 +13,61 @@
             --text-secondary: #8b949e;
             --accent-color: #58a6ff;
             --border-color: #30363d;
+            --hero-bg: linear-gradient(135deg, #161b22, #1f2937);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-primary); line-height: 1.6; }
+        
+        header { text-align: center; padding: 4rem 2rem; border-bottom: 1px solid var(--border-color); }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .tagline { color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 2rem; }
+        
+        .social-links a { color: var(--text-primary); font-size: 1.5rem; margin: 0 10px; transition: color 0.3s ease; }
+        .social-links a:hover { color: var(--accent-color); }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
+        h2 { font-size: 2rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-
-        header {
+        /* Grand Total Hero Card */
+        .hero-stat {
+            background: var(--hero-bg);
+            border: 1px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 2.5rem;
             text-align: center;
-            padding: 4rem 2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .tagline {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
             margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(88, 166, 255, 0.1);
         }
+        .hero-stat h3 { color: var(--text-primary); font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: normal; }
+        .hero-stat .number { 
+            font-size: 4.5rem; 
+            font-weight: 800; 
+            color: var(--accent-color); 
+            text-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
+            line-height: 1.1;
+        }
+        .hero-stat p { color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem; }
 
-        .social-links a {
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-color);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 4rem;
-        }
-
-        .stat-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.2s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-        }
-
-        .stat-card h3 {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-card .number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--accent-color);
-        }
+        /* Individual Stats Grid */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
+        .stat-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; text-align: center; transition: transform 0.2s ease; }
+        .stat-card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+        .stat-card h3 { color: var(--text-secondary); font-size: 1rem; margin-bottom: 0.5rem; }
+        .stat-card .number { font-size: 2rem; font-weight: bold; color: var(--accent-color); }
+        .stat-card .sub-stat { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; display: block; }
 
         /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-card .tech-stack {
-            font-size: 0.85rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .project-card ul {
-            margin-left: 1.2rem;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            flex-grow: 1;
-        }
-
-        .project-card li {
-            margin-bottom: 0.5rem;
-        }
-
-        .project-links {
-            margin-top: 1.5rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--accent-color);
-            text-decoration: none;
-            border: 1px solid var(--accent-color);
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-        }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .project-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; }
+        .project-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .project-card .tech-stack { font-size: 0.85rem; color: var(--accent-color); margin-bottom: 1rem; font-weight: bold; }
+        .project-card ul { margin-left: 1.2rem; color: var(--text-secondary); font-size: 0.95rem; flex-grow: 1; }
+        .project-card li { margin-bottom: 0.5rem; }
+        .project-links { margin-top: 1.5rem; }
+        
+        .btn { display: inline-block; background-color: transparent; color: var(--accent-color); text-decoration: none; border: 1px solid var(--accent-color); padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.9rem; transition: all 0.3s ease; }
+        .btn:hover { background-color: var(--accent-color); color: var(--bg-color); }
     </style>
 </head>
 <body>
@@ -178,27 +84,36 @@
     </header>
 
     <div class="container">
-        <h2>Problem Solving Stats</h2>
+        
+        <h2>Problem Solving Impact</h2>
+        
+        <div class="hero-stat">
+            <h3>Total Problems Solved</h3>
+            <div class="number" id="total-stats">Loading...</div>
+            <p>Across LeetCode, Codeforces, and GeeksforGeeks</p>
+        </div>
+
         <div class="stats-grid">
             <div class="stat-card">
                 <h3>LeetCode</h3>
-                <div class="number" id="leetcode-stats">Loading...</div>
-                <a href="https://leetcode.com/u/rajatkhedar123/" target="_blank" style="color:var(--text-secondary); text-decoration:none; font-size: 0.8rem;">View Profile</a>
+                <div class="number" id="leetcode-stats">...</div>
+                <a href="https://leetcode.com/u/rajatkhedar123/" target="_blank" style="color:var(--text-secondary); text-decoration:none; font-size: 0.8rem; margin-top: 8px; display: inline-block;">View Profile</a>
             </div>
             <div class="stat-card">
                 <h3>Codeforces</h3>
-                <div class="number" id="codeforces-stats">Loading...</div>
+                <div class="number" id="codeforces-rank">...</div>
+                <span class="sub-stat" id="codeforces-solved">... solved</span>
                 <a href="https://codeforces.com/profile/rajatkhedar123" target="_blank" style="color:var(--text-secondary); text-decoration:none; font-size: 0.8rem;">View Profile</a>
             </div>
             <div class="stat-card">
                 <h3>GeeksforGeeks</h3>
-                <div class="number" id="gfg-stats">Loading...</div>
-                <a href="https://www.geeksforgeeks.org/profile/rajat54epe?tab=activity" target="_blank" style="color:var(--text-secondary); text-decoration:none; font-size: 0.8rem;">View Profile</a>
+                <div class="number" id="gfg-stats">...</div>
+                <a href="https://www.geeksforgeeks.org/profile/rajat54epe?tab=activity" target="_blank" style="color:var(--text-secondary); text-decoration:none; font-size: 0.8rem; margin-top: 8px; display: inline-block;">View Profile</a>
             </div>
             <div class="stat-card">
                 <h3>Naukri Code360</h3>
                 <div class="number">Active</div>
-                <a href="https://www.naukri.com/code360/profile/22f2aa1d-5ac3-43ce-b40c-4c3637ff4327" target="_blank" style="color:var(--text-secondary); text-decoration:none; font-size: 0.8rem;">View Profile</a>
+                <a href="https://www.naukri.com/code360/profile/22f2aa1d-5ac3-43ce-b40c-4c3637ff4327" target="_blank" style="color:var(--text-secondary); text-decoration:none; font-size: 0.8rem; margin-top: 8px; display: inline-block;">View Profile</a>
             </div>
         </div>
 
@@ -208,7 +123,7 @@
                 <h3>JARVIS – Agentic AI Assistant</h3>
                 <div class="tech-stack">Python | Claude API | MCP | RAG | SQLite</div>
                 <ul>
-                    <li>Designed an MCP-style tool-calling layer letting the agent autonomously select and invoke tools from natural-language voice intent, orchestrated across a dual-model reasoning pipeline.</li>
+                    <li>Designed an MCP-style tool-calling layer letting the agent autonomously select and invoke tools from natural-language voice intent.</li>
                     <li>Implemented a RAG-style long-term memory layer using SQLite FTS5 full-text retrieval for persistent, context-aware recall across sessions.</li>
                 </ul>
                 <div class="project-links">
@@ -245,19 +160,26 @@
     <script>
         async function loadStats() {
             try {
-                // Prevent aggressive browser caching so you always see fresh stats
+                // Prevent caching so live numbers show up immediately
                 const response = await fetch('./stats.json?t=' + new Date().getTime());
-                if (!response.ok) throw new Error('Data not available yet');
+                if (!response.ok) throw new Error('Data not ready');
                 const data = await response.json();
                 
-                document.getElementById('leetcode-stats').innerText = data.leetcode || '350+';
-                document.getElementById('codeforces-stats').innerText = data.codeforces || 'Pupil';
-                document.getElementById('gfg-stats').innerText = data.gfg || '200+';
+                // Populate the Grand Total
+                document.getElementById('total-stats').innerText = data.total || '0';
+                
+                // Populate Individual Cards
+                document.getElementById('leetcode-stats').innerText = data.leetcode || '0';
+                document.getElementById('codeforces-rank').innerText = data.codeforces_rank || 'Newbie';
+                document.getElementById('codeforces-solved').innerText = (data.codeforces_solved || '0') + ' solved';
+                document.getElementById('gfg-stats').innerText = data.gfg || '0';
+                
             } catch (error) {
-                console.log('Using default fallback stats:', error);
-                // Fallbacks if stats.json hasn't generated yet
+                console.log('Using default fallbacks:', error);
+                document.getElementById('total-stats').innerText = '550+';
                 document.getElementById('leetcode-stats').innerText = '350+';
-                document.getElementById('codeforces-stats').innerText = 'Pupil';
+                document.getElementById('codeforces-rank').innerText = 'Newbie';
+                document.getElementById('codeforces-solved').innerText = 'Active';
                 document.getElementById('gfg-stats').innerText = '200+';
             }
         }
